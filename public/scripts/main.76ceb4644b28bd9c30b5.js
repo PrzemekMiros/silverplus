@@ -41,7 +41,7 @@
         "fourth-section-hotspot-sub_five-title": "Środowisko",
         "fourth-section-hotspot-sub_five-body":
           "Produkt jest przyjazny dla ludzi i środowiska naturalnego, ekologiczny i biodegradowalny.",
-        "fifth-section-title": "Łatwy w stosowaniu i magazynowaniu.",
+        "fifth-section-title": "Stymuluje wzrost i rozrost roślin",
         "fifth-section-body":
           "Stosuj systematycznie raz w tygodniu oraz bezpośrednio po opadach, gdy powierzchnia roślin jest sucha.",
         "sixth-section-title": "Dwuskładnikowy stymulator",
@@ -447,9 +447,7 @@
               desktop &&
                 (__p += '\n\t<div class="menu__left sectionBase__half">\n\t\t'),
               (__p +=
-                '\n\t\t<header data-ui="header" class="menu__header subText2">' +
-                (null == (__t = copy["menu-headline"]) ? "" : __t) +
-                '</header>\n\n\t\t<ul class="menu__navList">\n\t\t\t<li data-ui="btnScience" class="menu__navListItem">\n\t\t\t\t<h3 class="menu__navSubtitle subText">' +
+                '\n\t\t<ul class="menu__navList">\n\t\t\t<li data-ui="btnScience" class="menu__navListItem">\n\t\t\t\t<h3 class="menu__navSubtitle subText">' +
                 (null == (__t = copy["menu-item_one-subtitle"]) ? "" : __t) +
                 '</h3>\n\t\t\t\t<h2 class="menu__navTitle title3">' +
                 (null == (__t = copy["menu-item_one-title"]) ? "" : __t) +
@@ -5523,7 +5521,7 @@
       var Kn = Object.create(Object.prototype, {
           map: {
             get: function () {
-              var e = Qn("msdf-arial-bold");
+              var e = Qn("msdf-poppins-bold");
               return (
                 Object.defineProperty(Kn, "map", {
                   value: e,
@@ -5536,7 +5534,7 @@
           },
           json: {
             get: function () {
-              var e = se.a.other.get("msdf-arial-bold-data").data;
+              var e = se.a.other.get("msdf-poppins-bold-data").data;
               return (
                 Object.defineProperty(Kn, "json", {
                   value: e,
@@ -5551,7 +5549,7 @@
         $n = Object.create(Object.prototype, {
           map: {
             get: function () {
-              var e = Qn("msdf-gilroy");
+              var e = Qn("msdf-poppins-regular");
               return (
                 Object.defineProperty($n, "map", {
                   value: e,
@@ -5564,7 +5562,7 @@
           },
           json: {
             get: function () {
-              var e = se.a.other.get("msdf-gilroy-data").data;
+              var e = se.a.other.get("msdf-poppins-regular-data").data;
               return (
                 Object.defineProperty($n, "json", {
                   value: e,
@@ -8654,7 +8652,9 @@
                                         "click",
                                         function () {
                                           ((Fr.state.navigation.contact = !1),
-                                            (Fr.state.navigation.menu = !0));
+                                            setTimeout(function () {
+                                              Fr.state.navigation.menu = !0;
+                                            }, 50));
                                         },
                                       ),
                                       this.ui.btnBackResult.addEventListener(
@@ -14910,8 +14910,8 @@
                                                   function (e) {
                                                     return (
                                                       (c.a.isMobile
-                                                        ? 110
-                                                        : 150) *
+                                                        ? 80
+                                                        : 130) *
                                                       e.viewport.scale
                                                     );
                                                   },
@@ -21406,7 +21406,7 @@
                                               oc,
                                               function (e) {
                                                 return (
-                                                  (c.a.isMobile ? 110 : 100) *
+                                                  (c.a.isMobile ? 80 : 60) *
                                                   e.viewport.scale
                                                 );
                                               },
@@ -22953,7 +22953,7 @@
                                             qc,
                                             function (e) {
                                               return (
-                                                (c.a.isMobile ? 110 : 100) *
+                                                (c.a.isMobile ? 80 : 60) *
                                                 e.viewport.scale
                                               );
                                             },
@@ -23694,7 +23694,7 @@
                                             mp,
                                             function (e) {
                                               return (
-                                                (c.a.isMobile ? 110 : 100) *
+                                                (c.a.isMobile ? 80 : 60) *
                                                 e.viewport.scale
                                               );
                                             },
@@ -25840,7 +25840,7 @@
                                           store,
                                           function (e) {
                                             return (
-                                              (c.a.isMobile ? 110 : 100) *
+                                              (c.a.isMobile ? 80 : 60) *
                                               e.viewport.scale
                                             );
                                           },
@@ -33205,7 +33205,7 @@
                                               Xv,
                                               function (e) {
                                                 return (
-                                                  (c.a.isMobile ? 110 : 100) *
+                                                  (c.a.isMobile ? 80 : 60) *
                                                   e.viewport.scale
                                                 );
                                               },
@@ -34502,7 +34502,7 @@
                                                 km,
                                                 function (e) {
                                                   return (
-                                                    (c.a.isMobile ? 70 : 50) *
+                                                    (c.a.isMobile ? 60 : 40) *
                                                     e.viewport.scale
                                                   );
                                                 },
@@ -42299,8 +42299,8 @@
                                                   function (e) {
                                                     return (
                                                       (c.a.isMobile
-                                                        ? 110
-                                                        : 100) *
+                                                        ? 80
+                                                        : 60) *
                                                       e.viewport.scale
                                                     );
                                                   },
