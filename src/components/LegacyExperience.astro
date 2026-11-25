@@ -92,6 +92,16 @@
     display: none !important;
   }
 
+  /* Zapobiega pozostawieniu pustego menu przez animacje starego bundla. */
+  :global(.menu__navListItem),
+  :global(.menu__buttons > .btnMain),
+  :global(.menu__buttons > .linkExternal),
+  :global(.menu__header),
+  :global(.menu__footer) {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   /* Te trzy widoki są wbudowane w oryginalną prezentację. Formularze zostały
      zastąpione treścią produktową, zachowując jej natywną nawigację. */
   :global(.signup__form),
