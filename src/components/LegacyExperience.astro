@@ -1,0 +1,88 @@
+---
+// The downloaded WebGL experience is an opaque legacy bundle.  Loading it only
+// on the client preserves its original interaction while Astro renders the shell.
+---
+
+<div data-ui="scrollProxy"></div>
+<main data-ui="root" class="root" aria-label="Interaktywna prezentacja SilverPlus 2100"></main>
+
+<script>
+  const script = document.createElement('script');
+  script.src = '/scripts/loader.76ceb4644b28bd9c30b5.js';
+  script.async = true;
+  document.body.append(script);
+</script>
+
+<style>
+  :global(html),
+  :global(body) {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .root { position: fixed; inset: 0; }
+
+  :global(.logo) {
+    background: transparent url('/silverplus-logo.svg') center / contain no-repeat !important;
+    transform: scale(2) !important;
+    transform-origin: left center;
+  }
+
+  :global(.logo__icon) {
+    visibility: hidden;
+  }
+
+  :global(.title),
+  :global(.title2),
+  :global(.title3),
+  :global(.menu__navTitle),
+  :global(.btnMain),
+  :global(.linkExternal) {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: 700 !important;
+  }
+
+  :global(.menu__buttons .btnMain:nth-child(2)),
+  :global(.menu__buttons .linkExternal) {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  :global(.menu__footerLink:nth-of-type(4)) {
+    display: none !important;
+  }
+
+  /* Te trzy widoki są wbudowane w oryginalną prezentację. Formularze zostały
+     zastąpione treścią produktową, zachowując jej natywną nawigację. */
+  :global(.signup__form),
+  :global(.contact__formMain),
+  :global(.contact__noResults),
+  :global(.contact__spinner) {
+    display: none !important;
+  }
+
+  :global(.legal__inner) {
+    max-width: 90vw;
+  }
+
+  :global(.product-caution-title),
+  :global(.product-caution-copy) {
+    max-width: 70rem;
+    margin: 0 auto 2.4rem;
+    text-align: center;
+    line-height: 1.45;
+    font-size: clamp(1.6rem, 1.5vw, 2.4rem);
+  }
+
+  :global(.product-caution-title) {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 2.5vw, 4rem);
+  }
+</style>
