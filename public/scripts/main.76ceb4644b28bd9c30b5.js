@@ -7832,13 +7832,29 @@
               {
                 key: "offOpen",
                 value: function () {
-                  /* Zatrzymanie opóźnionych animacji zapobiega ukryciu menu
-                     już po jego ponownym otwarciu. */
-                  (L.b.killTweensOf(this.uiMain),
-                    L.b.killTweensOf(this.uiSecondary),
-                    L.b.set(this.uiMain, { alpha: 0.001, x: 0, y: 0 }),
-                    L.b.set(this.uiSecondary, { alpha: 0.001 }),
-                    (this.el.style.display = "none"));
+                  var e,
+                    t,
+                    n = this;
+                  (this.props.subMenu
+                    ? ((e = or.state.viewport.scale * (c.a.isMobile, -120)),
+                      (t = 0))
+                    : ((e = 0),
+                      (t = or.state.viewport.scale * (c.a.isMobile, -80))),
+                    L.b.killTweensOf(this.uiMain),
+                    L.b.staggerTo(
+                      this.uiMain,
+                      0.6,
+                      { alpha: 0.001, x: e, y: t, ease: "easeInQuart" },
+                      0.03,
+                      function () {
+                        /* Nie ukrywaj menu, jeśli użytkownik otworzył je ponownie. */
+                        or.state.navigation.menu || (n.el.style.display = "none");
+                      },
+                    ),
+                    L.b.to(this.uiSecondary, 0.2, {
+                      alpha: 0.001,
+                      ease: "easeInQuart",
+                    }));
                 },
               },
             ]) && er(n.prototype, i),
