@@ -13275,6 +13275,13 @@
       }
       for (var la = Object(u.a)(), ca = [], pa = 0; pa < 20; pa += 1)
         ca.push(to(-3, -6));
+      // Ustawienia modelu rośliny w pierwszej sekcji.
+      var landingPlantSettings = {
+        heightDesktop: 28.0338, // Większa wartość = większy model.
+        heightMobile: 15.20875,
+        x: 0, // Wartość dodatnia = w prawo, ujemna = w lewo.
+        y: -15, // Bardziej ujemna wartość = niżej.
+      };
       var ha =
         Object(it.a)(rt)(
           (ta = (function (e) {
@@ -13431,7 +13438,7 @@
                     this.plantHeight = size.y;
                     this.cornObject = new $e.Group();
                     this.cornObject.add(plant);
-                    this.cornObject.scale.setScalar((c.a.isMobile ? 13.225 : 14.812) / size.y);
+                    this.cornObject.scale.setScalar((c.a.isMobile ? landingPlantSettings.heightMobile : landingPlantSettings.heightDesktop) / size.y);
                     this.object.add(this.cornObject);
                   },
                 },
@@ -13473,13 +13480,13 @@
                   value: function () {
                     var time = la.state.time;
                     var progress = this.props.progress;
-                    this.props.pX = 0;
-                    this.props.pY = -3.5 + 0.06 * Math.sin(time * 0.35);
+                    this.props.pX = landingPlantSettings.x;
+                    this.props.pY = landingPlantSettings.y + 0.06 * Math.sin(time * 0.35);
                     this.props.pZ = 0;
                     this.props.rX = 0;
                     this.props.rY = Zn(4 * Math.sin(time * 0.2) + 6 * (progress - 0.5));
                     this.props.rZ = Zn(1.2 * Math.sin(time * 0.3));
-                    this.cornObject.scale.setScalar((c.a.isMobile ? 13.225 : 14.812) / this.plantHeight);
+                    this.cornObject.scale.setScalar((c.a.isMobile ? landingPlantSettings.heightMobile : landingPlantSettings.heightDesktop) / this.plantHeight);
                     this.plantLeaves.forEach(function (leaf, index) {
                       leaf.bone.rotation.z = leaf.rotation + 0.012 * Math.sin(time * 0.6 + index);
                     });
