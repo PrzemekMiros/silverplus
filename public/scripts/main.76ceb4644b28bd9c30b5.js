@@ -23,7 +23,7 @@
         "fourth-section-title": "Stymuluje wzrost i rozwój roślin",
         "fourth-section-body":
           "Od kiełkowania nasion po dojrzewanie plonów. Silver Plus 2100 wspiera rozwój części nadziemnych oraz systemu korzeniowego roślin.",
-        "fourth-section-cta": "Zastosowanie",
+        "fourth-section-cta": "Efekty",
         "fourth-section-hotspot-title": "Zalecany do:\npól i szklarni",
         "fourth-section-hotspot-select-cta": "POZNAJ ZASTOSOWANIE",
         "fourth-section-hotspot-sub_one-title": "Uprawy",
@@ -481,25 +481,7 @@
                 (null == (__t = copy["menu-item_seven-link"]) ? "" : __t) +
                 '"\n\t\t\tclass="menu__footerLink subText2"\n\t\t\ttarget="_blank"\n\t\t\t>' +
                 (null == (__t = copy["menu-item_seven-label"]) ? "" : __t) +
-                '</a>\n\t\t<a href="' +
-                (null == (__t = copy["menu-item_eight-link"]) ? "" : __t) +
-                '" class="menu__footerLink subText2" target="_blank">' +
-                (null == (__t = copy["menu-item_eight-label"]) ? "" : __t) +
-                '</a>\n\t\t<a href="' +
-                (null == (__t = copy["menu-item_nine-link"]) ? "" : __t) +
-                '" class="menu__footerLink subText2" target="_blank">' +
-                (null == (__t = copy["menu-item_nine-label"]) ? "" : __t) +
-                '</a>\n\t\t<a href="' +
-                (null == (__t = copy["menu-item_ten-link"]) ? "" : __t) +
-                '" class="menu__footerLink subText2" target="_blank">' +
-                (null == (__t = copy["menu-item_ten-label"]) ? "" : __t) +
-                '</a>\n\t\t<ul class="menu__social">\n\t\t\t<li class="menu__socialItem">\n\t\t\t\t<svg class="menu__socialItemIcon">\n\t\t\t\t\t<use xlink:href="#share-twitter" /></svg>\n\t\t\t\t<a\n\t\t\t\t\tdata-ui="btnTwitter"\n\t\t\t\t\tclass="menu__socialItemLink"\n\t\t\t\t\thref="' +
-                (null == (__t = copy["menu-twitter-link"]) ? "" : __t) +
-                '"\n\t\t\t\t\ttarget="_blank"\n\t\t\t\t></a>\n\t\t\t</li>\n\t\t\t<li class="menu__socialItem">\n\t\t\t\t<svg class="menu__socialItemIcon">\n\t\t\t\t\t<use xlink:href="#share-fb" /></svg>\n\t\t\t\t<a\n\t\t\t\t\tdata-ui="btnFacebook"\n\t\t\t\t\tclass="menu__socialItemLink"\n\t\t\t\t\thref="' +
-                (null == (__t = copy["menu-facebook-link"]) ? "" : __t) +
-                '"\n\t\t\t\t\ttarget="_blank"\n\t\t\t\t></a>\n\t\t\t</li>\n\t\t\t<li class="menu__socialItem">\n\t\t\t\t<svg class="menu__socialItemIcon">\n\t\t\t\t\t<use xlink:href="#share-instagram" /></svg>\n\t\t\t\t<a\n\t\t\t\t\tdata-ui="btnInsta"\n\t\t\t\t\tclass="menu__socialItemLink"\n\t\t\t\t\thref="' +
-                (null == (__t = copy["menu-instagram-link"]) ? "" : __t) +
-                '"\n\t\t\t\t\ttarget="_blank"\n\t\t\t\t></a>\n\t\t\t</li>\n\t\t</ul>\n\t</footer>\n</section>'));
+                '</a>\n\t</footer>\n</section>'));
           return __p;
         },
         createDom = __webpack_require__(165).default;
@@ -766,9 +748,9 @@
           rY: 0,
           rZ: 0,
           v: !0,
-          baseColor: "#00160a",
-          accentColor1: "#004484",
-          accentColor2: "#025b15",
+          baseColor: "#101c30",
+          accentColor1: "#243e61",
+          accentColor2: "#20474f",
           opacity: 1,
         },
         areaBgBlurred: {
@@ -923,9 +905,9 @@
           rZ: 0,
           v: !0,
           size: { width: 2261, height: 1152, pixelRatio: 1 },
-          baseColor: "#17120f",
-          accentColor1: "#4e2e10",
-          accentColor2: "#224528",
+          baseColor: "#121e30",
+          accentColor1: "#30445e",
+          accentColor2: "#23464e",
           opacity: 1,
         },
         dna: {
@@ -1261,9 +1243,9 @@
           rZ: 0,
           v: !0,
           size: { width: 1280, height: 720, pixelRatio: 2 },
-          baseColor: "#001c0c",
-          accentColor1: "#0a3a4f",
-          accentColor2: "#10421a",
+          baseColor: "#101d32",
+          accentColor1: "#284b67",
+          accentColor2: "#235057",
           opacity: 1,
         },
         areaBack1: {
@@ -7672,10 +7654,12 @@
                                       this.titles,
                                       this.btns,
                                     ])),
+                                    // The menu template may omit the header.
+                                    // GSAP staggerTo throws on missing targets.
                                     (this.uiSecondary = [
                                       this.ui.header,
                                       this.ui.footer,
-                                    ]),
+                                    ].filter(Boolean)),
                                     sr(
                                       this.ui.btnScience,
                                       0,
@@ -7711,36 +7695,6 @@
                                       this.ui.btnLegal,
                                       "legal",
                                       p["menu-item_btn-legal"],
-                                    ),
-                                    this.ui.btnTwitter.addEventListener(
-                                      "click",
-                                      function () {
-                                        m(
-                                          "Social Media Share",
-                                          "Click",
-                                          "Twitter",
-                                        );
-                                      },
-                                    ),
-                                    this.ui.btnFacebook.addEventListener(
-                                      "click",
-                                      function () {
-                                        m(
-                                          "Social Media Share",
-                                          "Click",
-                                          "Facebook",
-                                        );
-                                      },
-                                    ),
-                                    this.ui.btnInsta.addEventListener(
-                                      "click",
-                                      function () {
-                                        m(
-                                          "Social Media Share",
-                                          "Click",
-                                          "Instagram",
-                                        );
-                                      },
                                     ),
                                     this.ui.btnPodcast.addEventListener(
                                       "click",
@@ -7808,6 +7762,7 @@
                     t = c.a.isMobile ? 0.8 : 0.6,
                     n = e * (c.a.isMobile, 80);
                   (L.b.killTweensOf(this.uiMain),
+                    L.b.killTweensOf(this.uiSecondary),
                     L.b.set(this.uiMain, { alpha: 0.001, x: 0, y: n }),
                     L.b.staggerTo(
                       this.uiMain,
@@ -7841,6 +7796,7 @@
                     : ((e = 0),
                       (t = or.state.viewport.scale * (c.a.isMobile, -80))),
                     L.b.killTweensOf(this.uiMain),
+                    L.b.killTweensOf(this.uiSecondary),
                     L.b.staggerTo(
                       this.uiMain,
                       0.6,
@@ -13107,9 +13063,9 @@
                         };
                       },
                     ],
-                    baseColor: "#17120f",
-                    accentColor1: "#4e2e10",
-                    accentColor2: "#224528",
+                    baseColor: "#121e30",
+                    accentColor1: "#30445e",
+                    accentColor2: "#23464e",
                     opacity: 1,
                   }),
                   n
@@ -13228,9 +13184,9 @@
               this,
               Wo(t).call(this, {
                 uniforms: {
-                  baseColor: { value: new $e.Color("#17120f") },
-                  accentColor1: { value: new $e.Color("#4e2e10") },
-                  accentColor2: { value: new $e.Color("#224528") },
+                  baseColor: { value: new $e.Color("#121e30") },
+                  accentColor1: { value: new $e.Color("#30445e") },
+                  accentColor2: { value: new $e.Color("#23464e") },
                   accent1Position: { value: i },
                   accent2Position: { value: r },
                   opacity: { value: 1 },
@@ -13398,218 +13354,85 @@
                 },
                 {
                   key: "setupMesh",
-                  value: (function () {
-                    var e = ra(
-                      regeneratorRuntime.mark(function e() {
-                        var t,
-                          n,
-                          i,
-                          r,
-                          o,
-                          a,
-                          s,
-                          u,
-                          l,
-                          p,
-                          h,
-                          f,
-                          d,
-                          v,
-                          m,
-                          g,
-                          b,
-                          y = this;
-                        return regeneratorRuntime.wrap(
-                          function (e) {
-                            for (;;)
-                              switch ((e.prev = e.next)) {
-                                case 0:
-                                  return (
-                                    (t = new $e.GLTFLoader()),
-                                    (n = (function () {
-                                      var e = ra(
-                                        regeneratorRuntime.mark(function e(n) {
-                                          return regeneratorRuntime.wrap(
-                                            function (e) {
-                                              for (;;)
-                                                switch ((e.prev = e.next)) {
-                                                  case 0:
-                                                    return e.abrupt(
-                                                      "return",
-                                                      new Promise(function (e) {
-                                                        t.load(
-                                                          c.a.CDN + n,
-                                                          function (t) {
-                                                            e(t.scene);
-                                                          },
-                                                        );
-                                                      }),
-                                                    );
-                                                  case 1:
-                                                  case "end":
-                                                    return e.stop();
-                                                }
-                                            },
-                                            e,
-                                          );
-                                        }),
-                                      );
-                                      return function (t) {
-                                        return e.apply(this, arguments);
-                                      };
-                                    })()),
-                                    (e.next = 4),
-                                    n("models/landing/cobb_test.gltf")
-                                  );
-                                case 4:
-                                  return (
-                                    (this.cornScene = e.sent),
-                                    (e.next = 7),
-                                    n("models/landing/hair.gltf")
-                                  );
-                                case 7:
-                                  return (
-                                    (this.cornHairScene = e.sent),
-                                    (this.cornArmature =
-                                      this.cornScene.children[0]),
-                                    (this.cornBones =
-                                      this.cornArmature.getObjectByName(
-                                        "Armature_Bone",
-                                      )),
-                                    (this.hairObject = new $e.Object3D()),
-                                    (this.cornObject =
-                                      this.cornScene.children[0]),
-                                    (this.cornMaterials = []),
-                                    (e.next = 15),
-                                    Gn("landing-alpha")
-                                  );
-                                case 15:
-                                  return (
-                                    (i = e.sent),
-                                    (e.next = 18),
-                                    Gn("landing-hair-alpha")
-                                  );
-                                case 18:
-                                  return (
-                                    (r = e.sent),
-                                    (e.next = 21),
-                                    Gn("landing-top-left")
-                                  );
-                                case 21:
-                                  return (
-                                    (o = e.sent),
-                                    (e.next = 24),
-                                    Gn("landing-top-right")
-                                  );
-                                case 24:
-                                  return (
-                                    (a = e.sent),
-                                    (e.next = 27),
-                                    Gn("landing-bottom-left")
-                                  );
-                                case 27:
-                                  return (
-                                    (s = e.sent),
-                                    (e.next = 30),
-                                    Gn("landing-bottom-right")
-                                  );
-                                case 30:
-                                  return (
-                                    (u = e.sent),
-                                    (e.next = 33),
-                                    Gn("landing-hair-top-l")
-                                  );
-                                case 33:
-                                  return (
-                                    (l = e.sent),
-                                    (e.next = 36),
-                                    Gn("landing-hair-top-r")
-                                  );
-                                case 36:
-                                  return (
-                                    (p = e.sent),
-                                    (e.next = 39),
-                                    Gn("landing-hair-bottom-l")
-                                  );
-                                case 39:
-                                  return (
-                                    (h = e.sent),
-                                    (e.next = 42),
-                                    Gn("landing-hair-bottom-r")
-                                  );
-                                case 42:
-                                  for (
-                                    f = e.sent,
-                                      d = [o, a, s, u, i],
-                                      v = [l, p, h, f, r],
-                                      this.cornScene.traverse(function (e) {
-                                        y.createMaterial(e, d);
-                                      }),
-                                      this.object.add(this.cornObject),
-                                      m = 0;
-                                    m < this.cornObject.children.length;
-                                    m += 1
-                                  )
-                                    this.cornObject.children[m].rVal =
-                                      Math.random();
-                                  for (
-                                    this.cornHairScene.traverse(function (e) {
-                                      y.createMaterial(e, v, 9);
-                                    }),
-                                      this.object.add(this.hairObject),
-                                      g = 0;
-                                    g < this.cornHairScene.children.length;
-                                    g += 1
-                                  )
-                                    ((b = this.cornHairScene.children[g]),
-                                      this.hairObject.add(b),
-                                      (g -= 1));
-                                  this.cornObject.children[3].children[0].position.x =
-                                    -0.52;
-                                case 52:
-                                case "end":
-                                  return e.stop();
-                              }
-                          },
-                          e,
-                          this,
+                  value: async function () {
+                    // Reuse the exact foreground plant and textures from the growth section.
+                    // Load a separate scene so its skeleton and transforms stay independent.
+                    var assets = await Promise.all([
+                      new Promise(function (resolve, reject) {
+                        new $e.GLTFLoader().load(
+                          c.a.CDN + "images/stalk/stalk_rigged3.gltf",
+                          resolve,
+                          undefined,
+                          reject,
                         );
                       }),
-                    );
-                    return function () {
-                      return e.apply(this, arguments);
-                    };
-                  })(),
-                },
-                {
-                  key: "createMaterial",
-                  value: function (e, t, n) {
-                    var i = "SkinnedMesh" === e.type;
-                    if ("Mesh" === e.type || i) {
-                      ((e.material = new $e.ShaderMaterial({
-                        defines: { MAIN_CORN: !0 },
-                        uniforms: {
-                          uTextures: { value: t },
-                          uTextureBlend: { value: new $e.Vector2() },
-                          uDepthPoint: { value: new $e.Vector2() },
-                          uDisplaceAmount: {
-                            value: new $e.Vector2(0.01, 0.01),
-                          },
-                        },
-                        depthWrite: !1,
-                        depthTest: !1,
+                      Gn("stalk-diffuse-flat"),
+                      Gn("stalk-diffuse-shadow"),
+                      Gn("stalk-screen"),
+                      Gn("stalk-energy"),
+                    ]);
+                    var plant = assets[0].scene;
+                    assets.slice(1).forEach(function (texture) {
+                      texture.minFilter = $e.LinearFilter;
+                      texture.flipY = !1;
+                    });
+                    this.plantMaterial = new ng(
+                      {
+                        map: assets[1],
+                        skinning: !0,
                         transparent: !0,
+                        premultipliedAlpha: !0,
+                        alphaTest: 0.02,
                         side: $e.DoubleSide,
-                        skinning: i,
-                        vertexShader:
-                          "#define GLSLIFY 1\nvarying vec2 vUv;\n\nvoid main() {\n    vUv = uv;\n\n    vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );\n    gl_Position = projectionMatrix * mvPosition;\n}",
-                        fragmentShader:
-                          "#define GLSLIFY 1\nuniform sampler2D uTextures[5];\n\n// uniform sampler2D uDepthMap;\nuniform vec2 uDepthPoint;\nuniform vec2 uTextureBlend;\nuniform vec2 uDisplaceAmount;\n\nvarying vec2 vUv;\n\nfloat lerp(float min, float max, float value) {\n    return min + value * (max - min);\n}\n\nfloat map(float value, float minA, float maxA, float minB, float maxB) {\n    return (value - minA) / (maxA - minA) * (maxB - minB) + minB;\n}\n\nvoid main() {\n\tvec2 uv = vUv;\n    // uv.y *= -1.0;\n\t\n    float alpha = texture2D(uTextures[4], vUv).r;\n    // vec2 displace = uDisplaceAmount * uDepthPoint * vec2((tDepthMap.r * 2.0 - 1.0));\n\n    vec4 finalOutput = vec4(0.0,1.0,0.0,1.0);\n\n    vec4 textureTopLeft = texture2D(uTextures[0], uv);\n    vec4 textureTopRight = texture2D(uTextures[1], uv);\n    vec4 textureBottomLeft = texture2D(uTextures[2], uv);\n    vec4 textureBottomRight = texture2D(uTextures[3], uv);\n\n    vec4 outputTop = mix(textureTopLeft, textureTopRight, uTextureBlend.x);\n    vec4 outputBottom = mix(textureBottomLeft, textureBottomRight, uTextureBlend.x);\n    finalOutput = mix(outputTop, outputBottom, uTextureBlend.y);\n\n    gl_FragColor = vec4(finalOutput.rgb / alpha, alpha);\n    // gl_FragColor.rgb += (1.0 - alpha);\n    // gl_FragColor = vec4(1.0,0.0,0.0,1.0);\n}",
-                      })),
-                        this.cornMaterials.push(e.material),
-                        (e.renderOrder = n || e.userData["RENDER ORDER"]),
-                        e.layers.set(this.options.layer));
+                      },
+                      {
+                        uniforms: {
+                          foregroundTexture: { type: "sampler2D", value: assets[1] },
+                          foregroundShadowTexture: { type: "sampler2D", value: assets[2] },
+                          foregroundScreenTexture: { type: "sampler2D", value: assets[3] },
+                          energyMask: { type: "sampler2D", value: assets[4] },
+                          iResolution: { type: "vec2", value: new $e.Vector2(256, 256) },
+                          center: { type: "float", value: new $e.Vector2(0.5, 0.5) },
+                          iTime: { type: "float", value: 1 },
+                          lightning: { type: "float", value: 0 },
+                          switchTime: { type: "float", value: 0 },
+                          sunAmount: { type: "float", value: 1 },
+                          energyAmount: { type: "float", value: 0 },
+                          vertPos: { type: "vec3", value: new $e.Vector3(), varType: "varying " },
+                          deathAmount: { type: "float", value: 0 },
+                        },
+                        vertexShader: tb,
+                        fragmentShader: nb,
+                      },
+                    );
+                    var material = this.plantMaterial;
+                    var layer = this.options.layer;
+                    this.plantLeaves = [];
+                    var leaves = this.plantLeaves;
+                    plant.traverse(function (node) {
+                      node.layers.set(layer);
+                      if (node.isMesh) {
+                        node.material = material;
+                        node.frustumCulled = !1;
+                      }
+                      if (node.isBone && /^leaf\d+$/i.test(node.name)) {
+                        leaves.push({ bone: node, rotation: node.rotation.z });
+                      }
+                    });
+                    plant.rotation.y = Math.PI / 2;
+                    plant.updateMatrixWorld(!0);
+                    var bounds = new $e.Box3().setFromObject(plant);
+                    var center = bounds.getCenter(new $e.Vector3());
+                    var size = bounds.getSize(new $e.Vector3());
+                    if (!Number.isFinite(size.y) || size.y <= 0) {
+                      throw new Error("Invalid landing plant bounds");
                     }
+                    plant.position.sub(center);
+                    this.plantHeight = size.y;
+                    this.cornObject = new $e.Group();
+                    this.cornObject.add(plant);
+                    this.cornObject.scale.setScalar((c.a.isMobile ? 13.225 : 14.812) / size.y);
+                    this.object.add(this.cornObject);
                   },
                 },
                 {
@@ -13648,50 +13471,18 @@
                 {
                   key: "whileActive",
                   value: function () {
-                    var e = this.props.progress,
-                      t = Object(Jr.a)(e, -20, 20),
-                      n = Object(Jr.a)(e, -10, -20),
-                      i = -2 + 0.15 * Math.cos(0.2 * la.state.time),
-                      r = t + 5 * Math.sin(0.2 * la.state.time),
-                      a = n + 3 * Math.cos(0.2 * la.state.time);
-                    ((this.props.pX = 0),
-                      (this.props.pY = i),
-                      (this.props.pZ = 0),
-                      (this.props.rX = Zn(0)),
-                      (this.props.rY = Zn(r)),
-                      (this.props.rZ = Zn(a)));
-                    var s = Object(o.a)(
-                        r + this.props.sceneRotation[1],
-                        -15,
-                        15,
-                        0,
-                        1,
-                        !0,
-                      ),
-                      u = Object(o.a)(
-                        0 + this.props.sceneRotation[0],
-                        -20,
-                        0,
-                        0,
-                        1,
-                        !0,
-                      );
-                    (this.cornMaterials.forEach(function (e) {
-                      ((e.uniforms.uTextureBlend.value.x = s),
-                        (e.uniforms.uTextureBlend.value.y = u));
-                    }),
-                      this.cornObject.children.forEach(function (t, n) {
-                        if ("07004" !== t.name) {
-                          var i = Object(o.a)(e, 0, 0.5, 2, 0, !0),
-                            r = Object(o.a)(e, 0.5, 1, 0, ca[n], !0),
-                            a = t.rVal * Math.PI * 2,
-                            s = la.state.time * Object(Jr.a)(t.rVal, 0.5, 1),
-                            u = Object(Jr.a)(t.rVal, 0.004, 0.006),
-                            l = Math.sin(s + a) * u;
-                          ((t.children[0].rotation.x = Zn(i + r)),
-                            (t.children[0].rotation.y = l));
-                        }
-                      }));
+                    var time = la.state.time;
+                    var progress = this.props.progress;
+                    this.props.pX = 0;
+                    this.props.pY = -3.5 + 0.06 * Math.sin(time * 0.35);
+                    this.props.pZ = 0;
+                    this.props.rX = 0;
+                    this.props.rY = Zn(4 * Math.sin(time * 0.2) + 6 * (progress - 0.5));
+                    this.props.rZ = Zn(1.2 * Math.sin(time * 0.3));
+                    this.cornObject.scale.setScalar((c.a.isMobile ? 13.225 : 14.812) / this.plantHeight);
+                    this.plantLeaves.forEach(function (leaf, index) {
+                      leaf.bone.rotation.z = leaf.rotation + 0.012 * Math.sin(time * 0.6 + index);
+                    });
                   },
                 },
               ]) && oa(n.prototype, i),
@@ -14778,9 +14569,9 @@
                                             new na().setup({
                                               options: { layer: 1, height: 2 },
                                               props: {
-                                                baseColor: "#00160a",
-                                                accentColor1: "#004484",
-                                                accentColor2: "#025b15",
+                                                baseColor: "#101c30",
+                                                accentColor1: "#243e61",
+                                                accentColor2: "#20474f",
                                               },
                                             })
                                           );
@@ -19852,7 +19643,7 @@
       var Rl,
         Cl,
         El = Object(u.a)(),
-        Ll = { base: "#fff", highlight: "#18a36a" },
+        Ll = { base: "#fff", highlight: "#83d6cf" },
         Il =
           Object(it.a)(rt)(
             (Fl(
@@ -22455,9 +22246,9 @@
             rY: 0,
             rZ: 0,
             v: !0,
-            baseColor: "#05190d",
-            accentColor1: "#262808",
-            accentColor2: "#0b3838",
+            baseColor: "#101c30",
+            accentColor1: "#34445c",
+            accentColor2: "#234c58",
             opacity: 1,
           },
           cluster: {
@@ -23276,9 +23067,9 @@
           rY: 0,
           rZ: 0,
           v: !0,
-          baseColor: "#091916",
-          accentColor1: "#0c2d21",
-          accentColor2: "#0a1c38",
+          baseColor: "#101c30",
+          accentColor1: "#243e61",
+          accentColor2: "#20474f",
           opacity: 1,
         };
       function sp(e) {
@@ -33028,14 +32819,9 @@
                                         })
                                       );
                                     case 2:
-                                      ((this.kernelHotspot = e.sent),
-                                        this.kernelHotspot.on(
-                                          "click",
-                                          this.onHotspotPointer,
-                                        ),
-                                        this.object.add(
-                                          this.kernelHotspot.object,
-                                        ));
+                                      // Keep the animation state, but leave the removed CTA
+                                      // outside the scene and without a click handler.
+                                      this.kernelHotspot = e.sent;
                                     case 5:
                                     case "end":
                                       return e.stop();
@@ -35049,9 +34835,9 @@
                                             ),
                                           },
                                           props: {
-                                            baseColor: "#001c0c",
-                                            accentColor1: "#0a3a4f",
-                                            accentColor2: "#10421a",
+                                            baseColor: "#101d32",
+                                            accentColor1: "#284b67",
+                                            accentColor2: "#235057",
                                             pY: [
                                               this.store,
                                               function (e) {
@@ -35113,7 +34899,7 @@
                                               : "bottom-left",
                                             textTransform: "uppercase",
                                             layer: this.options.layers.UI_LAYER,
-                                            clickable: !0,
+                                            clickable: !1,
                                             text: p[
                                               "seventh-section-cta_five-label"
                                             ],
@@ -35171,11 +34957,7 @@
                                       );
                                     case 13:
                                       return (
-                                        this.object.add(this.termsLink.object),
-                                        this.termsLink.on(
-                                          "click",
-                                          this.onTermsClick,
-                                        ),
+                                        /* Retain the legacy layout store, but do not render or bind the removed footer link. */
                                         (this.privacyLink = new yi()),
                                         (e.next = 18),
                                         this.privacyLink.setup({
@@ -35188,7 +34970,7 @@
                                               : "bottom-left",
                                             textTransform: "uppercase",
                                             layer: this.options.layers.UI_LAYER,
-                                            clickable: !0,
+                                            clickable: !1,
                                             text: p[
                                               "seventh-section-cta_six-label"
                                             ],
@@ -35255,13 +35037,7 @@
                                       );
                                     case 18:
                                       return (
-                                        this.object.add(
-                                          this.privacyLink.object,
-                                        ),
-                                        this.privacyLink.on(
-                                          "click",
-                                          this.onPrivacyClick,
-                                        ),
+                                        /* Retain the legacy layout store, but do not render or bind the removed footer link. */
                                         (this.californiaPrivacyLink = new yi()),
                                         (e.next = 23),
                                         this.californiaPrivacyLink.setup({
@@ -42227,7 +42003,13 @@
                                             ),
                                             this.hotspot.on(
                                               "click",
-                                              this.onHotspotClick,
+                                              function () {
+                                                window.open(
+                                                  "https://smka.pl/agro-efekty-zastosowan/",
+                                                  "_blank",
+                                                  "noopener,noreferrer",
+                                                );
+                                              },
                                             ),
                                             (e.next = 8),
                                             new ft().setup({
@@ -42929,11 +42711,11 @@
                               "Detail Button Click",
                               "Click",
                               [
-                                "Wind",
-                                "Drought",
-                                "Disease",
-                                "Soil Types",
-                                "Population Density",
+                                "Uprawy",
+                                "Nasiona",
+                                "Ohrona",
+                                "Plony",
+                                "Środowwisko",
                               ][e.options.index],
                             ),
                               this.emit("clickItem"),

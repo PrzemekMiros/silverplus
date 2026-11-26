@@ -1,0 +1,73 @@
+/* SilverPlus: navy, silver and muted turquoise.
+   WebGL background colours live in the legacy main bundle. */
+:root {
+  --sp-background: #101c30;
+  --sp-surface: #172a43;
+  --sp-text: #edf3f8;
+  --sp-muted: #b3c5d5;
+  --sp-accent: #83d6cf;
+  --sp-accent-hover: #b6ece6;
+}
+
+body {
+  color: var(--sp-text) !important;
+}
+
+::selection {
+  color: var(--sp-background);
+  background: var(--sp-accent);
+}
+
+.root .btnMain {
+  color: var(--sp-text);
+  background-color: rgb(23 42 67 / 75%);
+  border-radius: 0.6rem;
+  transition: background-color 200ms, color 200ms;
+}
+
+.root .btnMain__border {
+  border-color: var(--sp-accent);
+  opacity: 0.65;
+}
+
+.root .btnMain:hover,
+.root .btnMain:focus-visible {
+  color: var(--sp-background);
+  background-color: var(--sp-accent);
+}
+
+.root .linkExternal,
+.root .btnBack,
+.root .menu__header {
+  color: var(--sp-accent);
+}
+
+.root .linkExternal:hover,
+.root .linkExternal:focus-visible,
+.root .menu__navListItem:hover .menu__navTitle {
+  color: var(--sp-accent-hover);
+}
+
+.root .linkExternal__underline,
+.root .menuBtn__line {
+  background-color: var(--sp-accent);
+}
+
+.root .menu__navSubtitle {
+  color: var(--sp-muted);
+  opacity: 0.8;
+}
+
+.root .menu__footerLink {
+  color: var(--sp-muted);
+}
+
+.root .rotateOverlay__bg {
+  background-color: var(--sp-background);
+  background-image: linear-gradient(45deg, #243e61, transparent 45%, #20474f);
+}
+
+.root :is(button, a, [tabindex]):focus-visible {
+  outline: 2px solid var(--sp-accent);
+  outline-offset: 5px;
+}
