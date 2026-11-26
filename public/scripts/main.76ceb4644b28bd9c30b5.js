@@ -6,7 +6,7 @@
         "landing-title": "Silver Plus 2100",
         "landing-body": "Naturalny dwukomponentowy stymulator wzrostu roślin: Kompozyt Silver Plus 2100 + nadtlenek wodoru 35%.",
         "landing-cta": "Przewiń, aby poznać produkt",
-        "first-section-title": "Nowy wymiar wzrostu i ochrony roślin.",
+        "first-section-title": "Nowy wymiar wzrostu i ochrony roślin",
         "first-section-body":
           "Stosowanie SILVER PLUS 2100 znacząco poprawia wzrost, urodzajność roślin oraz profilaktykę mikrobiologiczną. ",
         "first-section-cta": "Zobacz więcej",
@@ -41,7 +41,7 @@
         "fourth-section-hotspot-sub_five-title": "Środowisko",
         "fourth-section-hotspot-sub_five-body":
           "Produkt jest przyjazny dla ludzi i środowiska naturalnego, ekologiczny i biodegradowalny.",
-        "fifth-section-title": "Stymuluje wzrost i rozrost roślin",
+        "fifth-section-title": "Wysoka produktywność i jakość zbiorów",
         "fifth-section-body":
           "Stosuj systematycznie raz w tygodniu oraz bezpośrednio po opadach, gdy powierzchnia roślin jest sucha.",
         "sixth-section-title": "Dwuskładnikowy stymulator",
@@ -108,9 +108,9 @@
         "menu-item_one-subtitle": "Sekcja 1",
         "menu-item_one-title": "Opis produktu",
         "menu-item_two-subtitle": "Sekcja 2",
-        "menu-item_two-title": "Zastosowanie",
+        "menu-item_two-title": "Działanie",
         "menu-item_three-subtitle": "Sekcja 3",
-        "menu-item_three-title": "Efektywność",
+        "menu-item_three-title": "Składniki",
         "menu-item_four-label": "Przygotowanie",
         "menu-item_five-label": "Dawkowanie",
         "menu-item_btn-legal": "Środki ostrożności",
