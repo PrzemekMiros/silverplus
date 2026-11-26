@@ -13280,7 +13280,7 @@
         heightDesktop: 28.0338, // Większa wartość = większy model.
         heightMobile: 15.20875,
         x: 0, // Wartość dodatnia = w prawo, ujemna = w lewo.
-        y: -15, // Bardziej ujemna wartość = niżej.
+        y: -11, // Bardziej ujemna wartość = niżej.
       };
       var ha =
         Object(it.a)(rt)(
