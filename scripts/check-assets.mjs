@@ -30,6 +30,9 @@ for (const file of files.filter(file => file.startsWith(path.join(root, 'scripts
   if (text.includes('d1hl9u9k5hiqxp.cloudfront.net/')) errors.push(`Old CDN reference: ${file}`);
   for (const match of text.matchAll(/url:\s*"((?:fonts|images|textures|compressed)\/[^"\n]+\.(?:png|json|ktx))"/g)) {
     requireFile(path.join(root, match[1].replace('[format]', 's3tc')));
+    if (match[1].includes('[format]')) {
+      requireFile(path.join(root, match[1].replace('[format]', 'png').replace(/\.ktx$/, '.png')));
+    }
   }
   for (const match of text.matchAll(/"(\/?(?:models|assets|documents)\/[^"\n]+\.(?:gltf|pdf))"/g)) {
     requireFile(path.join(root, match[1].replace(/^\//, '')));

@@ -6,14 +6,67 @@
 <div data-ui="scrollProxy"></div>
 <main data-ui="root" class="root" aria-label="Interaktywna prezentacja SilverPlus 2100"></main>
 
+<section id="loading-error" role="alert" aria-labelledby="loading-error-title" hidden>
+  <div>
+    <h1 id="loading-error-title">Nie udało się wczytać prezentacji</h1>
+    <p>Sprawdź połączenie z internetem i spróbuj ponownie. Jeśli problem się powtarza, otwórz stronę w innej przeglądarce.</p>
+    <button type="button" id="loading-retry">Spróbuj ponownie</button>
+  </div>
+</section>
+<noscript>Włącz JavaScript w przeglądarce, aby wyświetlić prezentację SilverPlus 2100.</noscript>
+
 <script>
+  const errorPanel = document.getElementById('loading-error')!;
+  let starting = true;
+  const showError = () => {
+    starting = false;
+    window.clearTimeout(timeout);
+    errorPanel.hidden = false;
+  };
+  const timeout = window.setTimeout(showError, 90_000);
+  const onStartupError = () => { if (starting) showError(); };
+  window.addEventListener('silverplus:error', showError);
+  window.addEventListener('silverplus:ready', () => {
+    starting = false;
+    window.clearTimeout(timeout);
+  }, { once: true });
+  window.addEventListener('unhandledrejection', onStartupError);
+  window.addEventListener('error', onStartupError);
+  document.addEventListener('webglcontextlost', showError, true);
+  document.getElementById('loading-retry')!.addEventListener('click', () => window.location.reload());
   const script = document.createElement('script');
-  script.src = '/scripts/loader.76ceb4644b28bd9c30b5.js';
+  script.src = '/scripts/loader.76ceb4644b28bd9c30b5.js?v=texture-fallback-1';
   script.async = true;
+  script.onerror = showError;
   document.body.append(script);
 </script>
 
 <style>
+  #loading-error:not([hidden]) {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483647;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    overflow: auto;
+    background: #101c30;
+    color: #edf3f8;
+    text-align: center;
+  }
+  #loading-error > div { max-width: 560px; }
+  #loading-error h1 { font-size: 28px; line-height: 1.3; }
+  #loading-error p { font-size: 16px; line-height: 1.6; }
+  #loading-retry {
+    margin-top: 16px;
+    padding: 14px 24px;
+    border: 0;
+    border-radius: 6px;
+    background: #83d6cf;
+    color: #101c30;
+    font-size: 16px;
+    cursor: pointer;
+  }
   @font-face {
     font-family: 'Poppins';
     src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');

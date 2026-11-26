@@ -34,6 +34,15 @@ dla wersji produkcyjnej wykonaj ponownie `npm run build`.
 
 ## Weryfikacja
 
+Tekstury WebGL używają S3TC wyłącznie na urządzeniach obsługujących ten format.
+Pozostałe urządzenia pobierają PNG z `public/compressed/png/`. Nie usuwaj tego
+katalogu z publikacji. Po zmianie plików KTX odtwórz PNG poleceniem
+`python scripts/generate-texture-fallbacks.py` (wymaga Pillow).
+Licznik postępu odpowiada ukończonym pobraniom tekstur. Błąd uruchomienia
+lub przekroczenie 90 sekund wyświetla komunikat z przyciskiem ponownej próby.
+Po zmianie legacy JS zwiększ parametr wersji w komponencie `LegacyExperience.astro`
+i w adresie chunków w loaderze, aby ominąć stare pliki w pamięci przeglądarki.
+
 ```bash
 node scripts/check-assets.mjs
 npm run check

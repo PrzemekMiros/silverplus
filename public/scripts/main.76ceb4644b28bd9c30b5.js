@@ -5334,13 +5334,29 @@
                     return e.abrupt(
                       "return",
                       new Promise(function (e, n) {
-                        Bn.load(
+                        var portable = /\.png$/.test(t),
+                          timer = setTimeout(function () {
+                            n(new Error("Texture loading timed out: " + t));
+                          }, 30000);
+                        (portable ? new $e.TextureLoader() : Bn).load(
                           t,
-                          function (t) {
-                            ((t.needsUpdate = !0), e(t));
+                          function (texture) {
+                            clearTimeout(timer);
+                            if (portable) {
+                              // KTX pixels are already oriented for WebGL.
+                              texture.flipY = false;
+                              texture.generateMipmaps = t.indexOf("@mipmaps") !== -1;
+                              texture.minFilter = texture.generateMipmaps
+                                ? $e.LinearMipMapLinearFilter
+                                : $e.LinearFilter;
+                            }
+                            ((texture.needsUpdate = !0), e(texture));
                           },
                           null,
-                          n,
+                          function (error) {
+                            clearTimeout(timer);
+                            n(error);
+                          },
                         );
                       }),
                     );
@@ -5353,14 +5369,8 @@
         )).apply(this, arguments);
       }
       var Hn = s.a.memoize(function (e) {
-        var t = Object.entries({
-          astc: e.extensions.get("WEBGL_compressed_texture_astc"),
-          s3tc: e.extensions.get("WEBGL_compressed_texture_s3tc"),
-          pvrtc: e.extensions.get("WEBGL_compressed_texture_pvrtc"),
-        }).filter(function (e) {
-          return null !== e[1];
-        })[0];
-        return (t = t ? t[0] : null);
+        // Only S3TC files ship with this experience. Other GPUs use PNGs.
+        return e.extensions.get("WEBGL_compressed_texture_s3tc") ? "s3tc" : "png";
       });
       function Xn(e) {
         var t = e;
@@ -5415,6 +5425,7 @@
                   case 8:
                     if (
                       ((a = o.url.replace("[format]", Hn(Rn().renderer))),
+                      (a = a.indexOf("compressed/png/") === 0 ? a.replace(/\.ktx$/, ".png") : a),
                       !Nn.get(a))
                     ) {
                       e.next = 11;
@@ -5422,7 +5433,13 @@
                     }
                     return e.abrupt("return", Nn.get(a));
                   case 11:
-                    return ((e.next = 13), Vn(c.a.CDN + a));
+                    return (
+                      (e.next = 13),
+                      Vn(c.a.CDN + a).catch(function (error) {
+                        if (a.indexOf("compressed/s3tc/") !== 0) throw error;
+                        return Vn(c.a.CDN + a.replace("compressed/s3tc/", "compressed/png/").replace(/\.ktx$/, ".png"));
+                      })
+                    );
                   case 13:
                     return (
                       Xn((u = e.sent)),
@@ -44401,12 +44418,7 @@
                     case 39:
                       return (
                         (this.texturesProgress = 0),
-                        (v = setInterval(function () {
-                          ((g.texturesProgress += 0.005),
-                            n(
-                              Object(o.a)(g.texturesProgress, 0, 1, 0, 0.6, !0),
-                            ));
-                        }, 400)),
+                        (v = null),
                         (e.next = 43),
                         Promise.all(
                           Object.values(
@@ -44421,7 +44433,7 @@
                                         case 0:
                                           return ((e.next = 2), Gn(t.id));
                                         case 2:
-                                          ((g.texturesProgress += 0.02),
+                                          ((g.texturesProgress += 1 / Object.values(Object(Dn.a)(c.a.isMobile).compressed).length),
                                             n(
                                               Object(o.a)(
                                                 g.texturesProgress,

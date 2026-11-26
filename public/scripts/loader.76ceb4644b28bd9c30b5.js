@@ -32,7 +32,7 @@
               i.p +
               "" +
               ({ 1: "main", 2: "test0", 3: "vendors~main" }[t] || t) +
-              ".76ceb4644b28bd9c30b5.js"
+              ".76ceb4644b28bd9c30b5.js?v=texture-fallback-1"
             );
           })(t)),
           (s = function (e) {
@@ -23978,9 +23978,9 @@
             ).logPrefix,
             r = void 0 === n ? "[TASK] " : n,
             i = e ? console.log : function () {};
-          return new Promise(function (e) {
+          return new Promise(function (e, reject) {
             var n = t.map(function (t) {
-              return new Promise(function (e) {
+              return new Promise(function (e, reject) {
                 var n = window.performance.now(),
                   o = t();
                 o && o.then
@@ -23993,7 +23993,7 @@
                             .concat(window.performance.now() - n, " ms)"),
                         );
                       })
-                      .then(e)
+                      .then(e, reject)
                   : (i(
                       ""
                         .concat(r)
@@ -24003,7 +24003,7 @@
                     e());
               });
             });
-            Promise.all(n).then(e);
+            Promise.all(n).then(e, reject);
           });
         })(t, !1, { logPrefix: "[INIT] " });
       },
@@ -24199,7 +24199,8 @@
                 case 10:
                   return ((t.next = 12), k([I]));
                 case 12:
-                  ((A.progress = 100), A.hide({ delay: 0.3 }), T.start());
+                  ((A.progress = 100), A.hide({ delay: 0.3 }), T.start(),
+                    window.dispatchEvent(new Event("silverplus:ready")));
                 case 13:
                 case "end":
                   return t.stop();
@@ -24210,7 +24211,10 @@
       return function () {
         return t.apply(this, arguments);
       };
-    })()();
+    })()().catch(function (error) {
+      console.error("SilverPlus initialization failed:", error);
+      window.dispatchEvent(new Event("silverplus:error"));
+    });
   },
 ]);
 //# sourceMappingURL=loader.76ceb4644b28bd9c30b5.js.map
